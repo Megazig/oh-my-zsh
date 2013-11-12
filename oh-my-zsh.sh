@@ -1,8 +1,8 @@
 # Check for updates on initial load...
-if [ "$DISABLE_AUTO_UPDATE" != "true" ]
-then
-  /usr/bin/env ZSH=$ZSH zsh $ZSH/tools/check_for_upgrade.sh
-fi
+#if [ "$DISABLE_AUTO_UPDATE" != "true" ]
+#then
+#  /usr/bin/env ZSH=$ZSH zsh $ZSH/tools/check_for_upgrade.sh
+#fi
 
 # Initializes Oh My Zsh
 
@@ -39,6 +39,10 @@ done
 # Load and run compinit
 autoload -U compinit
 compinit -i
+
+# Load zmv
+autoload -U zmv
+alias mmv='noglob zmv -W'
 
 
 # Load all of the plugins that were defined in ~/.zshrc

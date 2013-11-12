@@ -15,10 +15,24 @@ update_all_svn() {
 		cd $f
 		if [[ -d ".svn" ]] then;
 			echo "***** UPDATING $f *****"
+			#svn upgrade
 			svn update
 		fi
 		cd ..
 	}
 	echo "update_all_svn() done!!!\n"
+}
+
+update_all_hg() {
+	for f in *(/); {
+		cd $f
+		if [[ -d ".hg" ]] then;
+			echo "***** UPDATING $f *****"
+			hg pull
+			hg update
+		fi
+		cd ..
+	}
+	echo "update_all_hg() done!!!\n"
 }
 
